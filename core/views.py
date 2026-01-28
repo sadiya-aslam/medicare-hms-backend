@@ -140,7 +140,7 @@ class PendingDoctorsView(APIView):
 
     def get(self, request):
         
-        pending_docs = User.objects.filter(role='doctor', is_active=False)
+        pending_docs = User.objects.filter(role='Doctor', is_active=False)
         
         data = []
         for u in pending_docs:
@@ -167,7 +167,7 @@ class ApproveDoctorView(APIView):
 
     def post(self, request, id):
         try:
-            doctor = User.objects.get(id=id, role='doctor')
+            doctor = User.objects.get(id=id, role='Doctor')
             doctor.is_active = True
             doctor.save()
             return Response({"message": "Doctor Approved Successfully!"})
