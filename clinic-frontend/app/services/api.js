@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 
-const API_URL = 'https://unwarmed-dee-fourcha.ngrok-free.dev'; 
+const API_URL = "https://medicare-hms-backend.onrender.com"; 
 
 export const api = axios.create({
     baseURL: API_URL,
