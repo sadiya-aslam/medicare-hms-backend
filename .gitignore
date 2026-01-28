@@ -1,0 +1,15 @@
+# Django (Backend) stuff to ignore
+__pycache__/
+*.py[cod]
+db.sqlite3
+.env
+venv/
+.venv/
+staticfiles/
+
+
+node_modules/
+.expo/
+npm-debug.log
+*.apk
+.DS_Store
