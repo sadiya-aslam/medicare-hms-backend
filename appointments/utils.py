@@ -1,8 +1,23 @@
+import threading
 from django.core.mail import send_mail
 from django.conf import settings
 
+# 👇 Helper function that runs in the background
+def send_email_thread(subject, message, recipient_list):
+    try:
+        print(f"📧 Background Thread: Sending email to {recipient_list}...")
+        send_mail(
+            subject=subject,
+            message=message,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=recipient_list,
+            fail_silently=False,
+        )
+        print("✅ Background Thread: Email sent!")
+    except Exception as e:
+        print(f"❌ Background Thread Failed: {e}")
+
 def send_appointment_notification(appointment, action):
- 
     if not appointment.patient or not appointment.patient.user.email:
         print("❌ Error: Patient has no email address.")
         return
@@ -13,7 +28,7 @@ def send_appointment_notification(appointment, action):
     date_str = appointment.date.strftime('%A, %d %B %Y')
     time_str = appointment.time_slot.strftime('%I:%M %p')
 
-    
+    # --- Message Logic (Same as before) ---
     if action == 'booked':
         subject = f"Appointment Confirmed: Dr. {doctor_name}"
         message = (
@@ -42,16 +57,10 @@ def send_appointment_notification(appointment, action):
     else:
         return
 
-    
-    try:
-        print(f"📧 Sending email to {patient_email}...") 
-        send_mail(
-            subject=subject,
-            message=message,
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[patient_email],
-            fail_silently=False,  
-        )
-        print("✅ Email sent successfully!")
-    except Exception as e:
-        print(f"❌ Failed to send email: {e}")
+    # 👇 THE FIX: Start a new thread for the email
+    # This lets the code continue immediately without waiting for Gmail
+    email_thread = threading.Thread(
+        target=send_email_thread,
+        args=(subject, message, [patient_email])
+    )
+    email_thread.start()
