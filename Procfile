@@ -1,1 +1,1 @@
-web: gunicorn hospital_appointment_system_project.wsgi
+web: gunicorn hospital_appoinment_system_project.wsgi
