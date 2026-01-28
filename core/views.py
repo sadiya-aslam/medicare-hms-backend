@@ -177,7 +177,7 @@ class ApproveDoctorView(APIView):
 
 
 
-
+# Fixing the Doctor capitalization bug
 class RejectDoctorView(generics.DestroyAPIView):
     permission_classes = [IsAdminUser]
     queryset = User.objects.all()
