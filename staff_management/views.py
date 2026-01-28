@@ -69,7 +69,7 @@ class DoctorLeaveDeleteView(generics.DestroyAPIView):
 
 class PublicDoctorListView(generics.ListAPIView):
     
-    queryset = Doctor.objects.filter(role='doctor',is_active=True)
+    queryset = Doctor.objects.filter(role='Doctor',is_active=True)
     serializer_class = DoctorProfileSerializer
     permission_classes = [IsAuthenticated]
 
@@ -199,7 +199,7 @@ class AdminLeaveUpdateView(APIView):
 
 
 class DoctorDropdownView(generics.ListAPIView):
-    queryset = Doctor.objects.filter(role='doctor',is_active=True)
+    queryset = Doctor.objects.filter(role='Doctor',is_active=True)
     serializer_class = DoctorSelectSerializer
     permission_classes = [] 
 
