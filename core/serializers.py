@@ -61,33 +61,37 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 
 class PatientProfileSerializer(serializers.ModelSerializer):
-    
-    email = serializers.EmailField(source='user.email', read_only=True)  
+    email = serializers.EmailField(source='user.email', read_only=True)
     first_name = serializers.CharField(source='user.first_name')
     last_name = serializers.CharField(source='user.last_name')
-    phone_number = serializers.CharField(source='user.phone_number')
+    
+    
+    phone_number = serializers.CharField(source='user.phone_number', validators=[]) 
 
     class Meta:
         model = Patient
-        fields = ['email', 'first_name', 'last_name', 'phone_number', 'date_of_birth','address','gender'] 
         
+        fields = ['email', 'first_name', 'last_name', 'phone_number', 'date_of_birth', 'address', 'gender']
 
     def update(self, instance, validated_data):
         user_data = validated_data.pop('user', {})
-        
-       
         user = instance.user
+
+        
+        new_phone = user_data.get('phone_number')
+        if new_phone and new_phone != user.phone_number:
+            if User.objects.filter(phone_number=new_phone).exists():
+                raise serializers.ValidationError({"phone_number": "This number is already in use by another patient."})
+
         for attr, value in user_data.items():
             setattr(user, attr, value)
         user.save()
 
-        
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
         instance.save()
 
         return instance
-    
 
 
 
