@@ -169,7 +169,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 
-
+#changing port
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
