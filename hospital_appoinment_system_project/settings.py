@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'core',
     'medical_records',
     'appointments',
-    'staff_management'
+    'staff_management',
+    'anymail'
     
 ]
 
@@ -171,19 +172,11 @@ CSRF_TRUSTED_ORIGINS = [
 
 #changing port
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
 
+ANYMAIL = {
+    "BREVO_API_KEY": os.environ.get('BREVO_API_KEY'),
+}
 
-
-EMAIL_HOST = 'smtp-relay.brevo.com'
-EMAIL_PORT = 2525
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-EMAIL_TIMEOUT = 30
-
-
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-
-
+# The email address that sends the emails (Must match your Brevo login)
 DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
