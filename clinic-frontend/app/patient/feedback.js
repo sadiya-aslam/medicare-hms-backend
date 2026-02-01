@@ -100,9 +100,7 @@ const RateDoctorScreen = () => {
     return (
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{flex:1}}>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-                    <Text style={styles.backText}>Cancel</Text>
-                </TouchableOpacity>
+               
 
                 <View style={styles.card}>
                     <Text style={styles.title}>Rate Your Visit</Text>

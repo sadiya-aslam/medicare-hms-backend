@@ -112,10 +112,7 @@ const MyBills = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => router.back()}><Text style={styles.backText}>← Back</Text></TouchableOpacity>
-                <Text style={styles.headerTitle}>Billing History</Text>
-            </View>
+            
 
             <FlatList
                 data={bills}
@@ -136,9 +133,6 @@ const MyBills = () => {
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#f3f4f6' },
     center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-    header: { backgroundColor: '#fff', paddingTop: 50, paddingBottom: 15, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', elevation: 2 },
-    backText: { color: '#2563eb', fontSize: 16, marginRight: 15 },
-    headerTitle: { fontSize: 20, fontWeight: 'bold' },
     listContent: { padding: 20 },
 
     card: { backgroundColor: '#fff', borderRadius: 12, padding: 16, marginBottom: 15, elevation: 2 },

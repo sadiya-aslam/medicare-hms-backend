@@ -181,12 +181,7 @@ const BookTimeSlot = () => {
     return (
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1 }}>
             <View style={styles.container}>
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-                        <Text style={styles.backText}>← Back</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.headerTitle}>Book Appointment</Text>
-                </View>
+               
 
                 <ScrollView contentContainerStyle={styles.content}>
                     
@@ -282,10 +277,7 @@ const BookTimeSlot = () => {
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#f3f4f6' },
     center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-    header: { backgroundColor: '#fff', paddingTop: 50, paddingBottom: 15, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', elevation: 2 },
-    backBtn: { marginRight: 15 },
-    backText: { color: '#2563eb', fontSize: 16 },
-    headerTitle: { fontSize: 20, fontWeight: 'bold', color: '#1f2937' },
+    
     content: { padding: 20 },
     label: { fontSize: 16, fontWeight: 'bold', color: '#374151', marginTop: 15, marginBottom: 8 },
     

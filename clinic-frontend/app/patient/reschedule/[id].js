@@ -173,12 +173,7 @@ const RescheduleScreen = () => {
     return (
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1 }}>
             <View style={styles.container}>
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-                        <Text style={styles.backText}>← Back</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.headerTitle}>Reschedule</Text>
-                </View>
+                
 
                 <ScrollView contentContainerStyle={styles.content}>
                     
@@ -253,10 +248,7 @@ const RescheduleScreen = () => {
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#fff7ed' },
     center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-    header: { backgroundColor: '#fff', paddingTop: 50, paddingBottom: 15, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', elevation: 2 },
-    backBtn: { marginRight: 15 },
-    backText: { color: '#ea580c', fontSize: 16 }, 
-    headerTitle: { fontSize: 20, fontWeight: 'bold', color: '#1f2937' },
+    
     content: { padding: 20 },
     title: { fontSize: 24, fontWeight: 'bold', color: '#ea580c', marginBottom: 5 },
     subtitle: { fontSize: 14, color: '#4b5563', marginBottom: 25 },

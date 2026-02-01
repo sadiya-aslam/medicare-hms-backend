@@ -65,10 +65,7 @@ const MyAppointments = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => router.back()}><Text style={styles.backText}>← Back</Text></TouchableOpacity>
-                <Text style={styles.headerTitle}>My Appointments</Text>
-            </View>
+           
 
             <ScrollView 
                 contentContainerStyle={styles.content}
@@ -133,9 +130,7 @@ const MyAppointments = () => {
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#f3f4f6' },
     center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-    header: { paddingTop: 50, paddingBottom: 15, paddingHorizontal: 20, backgroundColor: '#fff', flexDirection: 'row', alignItems: 'center' },
-    backText: { color: '#2563eb', fontSize: 16, marginRight: 15 },
-    headerTitle: { fontSize: 20, fontWeight: 'bold' },
+    
     content: { padding: 20 },
     card: { backgroundColor: '#fff', padding: 16, borderRadius: 12, marginBottom: 15 },
     cardTop: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 },

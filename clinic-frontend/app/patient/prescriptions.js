@@ -46,10 +46,7 @@ const Prescriptions = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.topBar}>
-                <TouchableOpacity onPress={() => router.back()}><Text style={styles.back}>← Back</Text></TouchableOpacity>
-                <Text style={styles.title}>Medical Records</Text>
-            </View>
+            
             <FlatList 
                 data={list} 
                 renderItem={renderItem} 

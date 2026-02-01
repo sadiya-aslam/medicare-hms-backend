@@ -136,12 +136,7 @@ const ManageSchedule = () => {
     return (
         <View style={styles.container}>
             
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-                    <Text style={styles.backText}>← Back</Text>
-                </TouchableOpacity>
-                <Text style={styles.headerTitle}>Manage Weekly Schedule</Text>
-            </View>
+            
 
             <ScrollView contentContainerStyle={styles.scrollContent}>
                 <Text style={styles.description}>

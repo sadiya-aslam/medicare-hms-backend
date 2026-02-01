@@ -151,12 +151,7 @@ const ManageLeave = () => {
         >
             <View style={styles.container}>
                 
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-                        <Text style={styles.backText}>← Back</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.headerTitle}>Manage Leaves</Text>
-                </View>
+                
 
                 <ScrollView contentContainerStyle={styles.content}>
                     

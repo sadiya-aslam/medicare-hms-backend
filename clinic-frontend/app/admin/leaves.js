@@ -173,12 +173,7 @@ const AdminLeaveManagement = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => router.back()}>
-                    <Ionicons name="arrow-back" size={24} color="#fff" />
-                </TouchableOpacity>
-                <Text style={styles.headerTitle}>Manage Leaves</Text>
-            </View>
+            
 
             {loading ? <ActivityIndicator size="large" color="#2563eb" style={{marginTop: 50}} /> : (
                 <FlatList 
@@ -322,7 +317,7 @@ const styles = StyleSheet.create({
     dateText: { fontSize: 15, color: '#374151', marginBottom: 5 },
     reason: { fontSize: 14, color: '#6b7280', fontStyle: 'italic', marginBottom: 10 },
     
-    fab: { position: 'absolute', bottom: 30, right: 30, backgroundColor: '#2563eb', width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', elevation: 5 },
+    fab: { position: 'absolute', bottom: 90, right: 30, backgroundColor: '#2563eb', width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', elevation: 5 },
     
     
     modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center' },

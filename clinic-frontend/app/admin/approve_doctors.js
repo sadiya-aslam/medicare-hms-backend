@@ -142,12 +142,7 @@ const ApproveDoctorsScreen = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => router.back()}>
-                    <Ionicons name="arrow-back" size={24} color="#fff" />
-                </TouchableOpacity>
-                <Text style={styles.headerTitle}>Pending Approvals</Text>
-            </View>
+            
 
             {loading ? (
                 <ActivityIndicator size="large" color="#2563eb" style={{marginTop: 50}} />
@@ -170,8 +165,7 @@ const ApproveDoctorsScreen = () => {
 
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#f3f4f6' },
-    header: { flexDirection: 'row', alignItems: 'center', padding: 20, paddingTop: 50, backgroundColor: '#1f2937', elevation: 4 },
-    headerTitle: { fontSize: 20, fontWeight: 'bold', color: '#fff', marginLeft: 15 },
+    
     
     
     card: { 

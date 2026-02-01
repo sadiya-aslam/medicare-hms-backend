@@ -124,16 +124,10 @@ const RegisterScreen = () => {
 
     return (
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1 }}>
-            <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 40 }}>
+            <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 100 }}>
                 
                 
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-                        <Ionicons name="arrow-back" size={24} color="#1f2937" />
-                    </TouchableOpacity>
-                    <Text style={styles.title}>Create Account</Text>
-                    <Text style={styles.subtitle}>Join us to manage your health better</Text>
-                </View>
+               
 
                 
                 <View style={styles.roleContainer}>
@@ -281,10 +275,7 @@ const RegisterScreen = () => {
 
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#fff' },
-    header: { padding: 20, paddingTop: 60 },
-    backBtn: { marginBottom: 15 },
-    title: { fontSize: 28, fontWeight: 'bold', color: '#1f2937' },
-    subtitle: { fontSize: 16, color: '#6b7280', marginTop: 5 },
+    
 
     roleContainer: { flexDirection: 'row', marginHorizontal: 20, marginVertical: 20, backgroundColor: '#f3f4f6', borderRadius: 12, padding: 4 },
     roleBtn: { flex: 1, paddingVertical: 10, alignItems: 'center', borderRadius: 10 },

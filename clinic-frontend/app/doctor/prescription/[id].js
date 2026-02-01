@@ -122,12 +122,7 @@ const WritePrescription = () => {
                 <View style={styles.container}>
                     
                     
-                    <View style={[styles.header, { paddingTop: insets.top + 10 }]}>
-                        <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-                            <Text style={styles.backText}>← Back</Text>
-                        </TouchableOpacity>
-                        <Text style={styles.headerTitle}>Write Prescription</Text>
-                    </View>
+                    
 
                     <ScrollView style={styles.content} contentContainerStyle={{ paddingBottom: 100 }}> 
                         

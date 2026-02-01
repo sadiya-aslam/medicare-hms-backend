@@ -178,12 +178,7 @@ const ServiceManagement = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => router.back()}>
-                    <Ionicons name="arrow-back" size={24} color="black" />
-                </TouchableOpacity>
-                <Text style={styles.headerTitle}>Manage Services</Text>
-            </View>
+            
 
             {loading ? <ActivityIndicator size="large" color="#2563eb" style={{marginTop: 50}} /> : (
                 <FlatList 
@@ -284,8 +279,7 @@ const ServiceManagement = () => {
 
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#f3f4f6' },
-    header: { flexDirection: 'row', alignItems: 'center', padding: 20, paddingTop: 50, backgroundColor: '#fff', elevation: 2 },
-    headerTitle: { fontSize: 20, fontWeight: 'bold', marginLeft: 15 },
+    
     
     card: { flexDirection: 'row', backgroundColor: '#fff', padding: 15, borderRadius: 10, marginBottom: 10, elevation: 2, alignItems: 'center' },
     serviceName: { fontSize: 16, fontWeight: 'bold', color: '#1f2937' },
@@ -298,7 +292,7 @@ const styles = StyleSheet.create({
     actions: { flexDirection: 'row', gap: 10 },
     iconBtn: { padding: 5 },
 
-    fab: { position: 'absolute', bottom: 30, right: 30, backgroundColor: '#2563eb', width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', elevation: 5 },
+    fab: { position: 'absolute', bottom: 90, right: 30, backgroundColor: '#2563eb', width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', elevation: 5 },
     
     modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center' },
     modalContent: { backgroundColor: '#fff', width: '85%', padding: 20, borderRadius: 10, elevation: 5 },

@@ -92,7 +92,7 @@ class RescheduleAppointmentView(generics.UpdateAPIView):
         
         
         appointment = serializer.save(status='Scheduled')
-        send_appointment_notification(appointment, 'reschedule')
+        send_appointment_notification(appointment, 'rescheduled')
 
 
 

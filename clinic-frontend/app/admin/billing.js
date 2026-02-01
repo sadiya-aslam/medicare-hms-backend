@@ -95,12 +95,7 @@ const BillingScreen = () => {
     return (
         <View style={styles.container}>
             
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-                    <Text style={styles.backText}>← Back</Text>
-                </TouchableOpacity>
-                <Text style={styles.headerTitle}>Invoice</Text>
-            </View>
+            
 
             <ScrollView contentContainerStyle={styles.content}>
                 
@@ -166,9 +161,7 @@ const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#f3f4f6' },
     center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
     
-    header: { paddingTop: 50, paddingBottom: 15, paddingHorizontal: 20, backgroundColor: '#fff', flexDirection: 'row', alignItems: 'center', elevation: 2 },
-    backText: { color: '#2563eb', fontSize: 16, marginRight: 15 },
-    headerTitle: { fontSize: 20, fontWeight: 'bold' },
+   
 
     content: { padding: 20 },
     card: { backgroundColor: '#fff', padding: 20, borderRadius: 12, marginBottom: 20, elevation: 2 },
